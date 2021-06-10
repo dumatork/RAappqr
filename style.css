@@ -1,0 +1,8 @@
+body {
+   font-family: 'century gothic';
+       background-image:url(imgs.jpg);
+       background-size: 100% 100%;
+       background-repeat: no-repeat;
+       background-position: center;
+       background-attachment: fixed;
+     }

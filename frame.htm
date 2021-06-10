@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camara</title>
+    <link href="index.html" rel="import" />
+    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.4/aframe/build/aframe-ar.js"></script>
+    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+
+</head>
+
+<body>
+    <a-scene embedded arjs="debugUIEnabled: false;" vr-mode-ui="enabled: false">
+        <a-marker preset="custom" type="pattern" id="marcador">
+            <a-box color="green" scale="1 1 1" id="entityID1">
+            </a-box>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+        var todasLasCookies = co1 = document.cookie;
+        console.log(co1);
+        var micookie = (document.cookie.indexOf('s=') === -1 ? '' : ("; " + document.cookie).split('; s=')[1].split(';')[0]);
+        var mo = micookie.substr(0, micookie.lastIndexOf('path')) || micookie;
+        //var mod=mo.split('=').pop();
+        console.log(mo);
+        //console.log(micookie);
+        var el = document.querySelector('#entityID1');
+        el.removeAttribute("gltf-model");
+        el.setAttribute("gltf-model", mo);
+        //el.setAttribute("response-type", 'arraybuffer');
+        el.setAttribute("scale", '0.10 0.10 0.10');
+        var miruta = (document.cookie.indexOf('z=') === -1 ? '' : ("; " + document.cookie).split('; z=')[1].split(';')[0]);
+        var rutaa = miruta.substr(0, miruta.lastIndexOf('path')) || miruta;
+        var e = document.querySelector('#marcador');
+        e.removeAttribute("url");
+        e.setAttribute("url", rutaa);
+        console.log(rutaa);
+    </script>
+</body>
+
+</html>
